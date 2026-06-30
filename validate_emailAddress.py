@@ -24,10 +24,12 @@ def is_valid_email(email: str) -> bool:
 		return False
 
 	local_part, sep, domain = candidate.rpartition("@")
-	if sep == "" or not local_part or not domain:
+if sep == "" or not local_part or not domain:
 		return False
 if len(local_part) > 64:
 prin
+
+
 		return False
 
 	return EMAIL_PATTERN.fullmatch(candidate) is not None
